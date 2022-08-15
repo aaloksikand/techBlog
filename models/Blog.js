@@ -3,7 +3,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Movie extends Model {}  //change to class Blog extends Model {}
+class Blog extends Model {}
 // movie model to create the movies displayed once clicked
 Blog.init(  
   {
@@ -25,7 +25,14 @@ Blog.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
       allowNull: false,
-    }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'user',
+          key: 'id',
+        }
+  },
     },
 
   {

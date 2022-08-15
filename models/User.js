@@ -35,7 +35,20 @@ User.init(
         len: [8],
       },
     },
-    
+    blog_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "blog",
+        key: "id",
+      },
+    },
+    comment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "comment",
+        key: "id",
+      },
+    },
   },
   {
     hooks: {
