@@ -1,5 +1,3 @@
-//TODO: needs details
-
 const router = require("express").Router();
 const { User } = require("../../models");
 
@@ -10,7 +8,6 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
-      //req.session.photo = userData.profileUrl;  This is not part of Acceptance Criteria so can be removed.
 
       res.status(200).json(userData);
     });
@@ -42,7 +39,6 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
-      // req.session.photo = userData.profileUrl;  //unecessary 
 
       res.json({ user: userData, message: "You are now logged in!" });
     });
