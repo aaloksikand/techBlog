@@ -1,10 +1,9 @@
-//rename to Comment.js
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Review extends Model {}  //rename to Comment.js
-// review model to create the reviews made by users
-Review.init(  //rename to Comment
+class Comment extends Model {}
+// comment model to create the comments made by users
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,10 +15,6 @@ Review.init(  //rename to Comment
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    // rating: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
     date: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -32,24 +27,22 @@ Review.init(  //rename to Comment
             key: 'id',
           }
     },
-    movie_id: {
+    blog_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'movie', //change to 'blog'
+            model: 'blog',
             key: 'id',
           }
-    },
-
-
+    }
     },
 
   {
     sequelize,
     freezeTableName: true,
-    timestamps: false,
+    timestamps: true,
     underscored: true,
-    modelName: 'review',  //change to 'comment'
+    modelName: 'comment',
   }
 );
 
-module.exports = Review;  //change to Comment
+module.exports = Comment;
