@@ -1,0 +1,57 @@
+
+[
+    {
+        "content":"I thought this blog post was terrible.",
+        "user_id":1,
+        "blog_id":2
+
+    },
+    {
+        "content":"I agree!",
+        "user_id":2,
+        "blog_id":3
+
+    },
+    {
+        "content":"I disagree 100%",
+        "user_id":3,
+        "blog_id":4
+
+    },
+    {
+        "content":"huh?",
+        "user_id":4,
+        "blog_id":5
+
+    },
+    {
+        "content":"What in the world are you talking about?",
+        "user_id":5,
+        "blog_id":6
+
+    },
+    {
+        "content":"I thought this was meh",
+        "user_id":3,
+        "blog_id":7
+
+    },
+    {
+        "content":"Who do you think you are?",
+        "user_id":3,
+        "blog_id":8
+
+    },
+    {
+        "content":"Weird",
+        "user_id":3,
+        "blog_id":9
+
+    },
+    {
+        "content":"Obviously!",
+        "user_id":3,
+        "blog_id":10
+
+    }
+]
