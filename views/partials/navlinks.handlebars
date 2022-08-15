@@ -1,0 +1,9 @@
+{{!-- Navbar setup to navigate to different route --}}
+<div id="nav">
+  <a href="/">Home</a>
+  {{#if loggedIn}}
+    <a id="logout" href="">Logout</a>
+  {{else}}
+    <a id="login" href="/login">Login</a>
+  {{/if}}
+</div>
