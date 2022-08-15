@@ -1,0 +1,62 @@
+[
+  {
+    "blogTitle": "Sing 2",
+    "blogText": "PG",
+    "date": "2021"
+  },
+
+  {
+    "blogTitle": "The Man From Toronto",
+    "blogText": "PG-13",
+    "date": "2022"
+  },
+
+  {
+    "blogTitle": "Hustle",
+    "blogText": "R",
+    "date": "2022"
+   },
+
+  {
+    "blogTitle": "Red Notice",
+    "blogText": "PG-13",
+    "date": "2021"
+
+    },
+
+  {
+    "blogTitle": "Mean Girls",
+    "blogText": "PG-13",
+    "date": "2004"
+  },
+
+  {
+    "blogTitle": "The Adam Project",
+    "blogText": "PG-13",
+    "date": "2022"
+  },
+
+  {
+    "blogTitle": "The Amazing Spider-Man",
+    "blogText": "PG-13",
+    "date": "2012"
+  },
+
+  {
+    "blogTitle": "The Dark Knight Rises",
+    "blogText": "PG-13",
+    "date": "2012"
+  },
+
+  {
+    "blogTitle": "A Madea Homecoming",
+    "blogText": "TV-MA",
+    "date": "2022"
+  },
+
+  {
+    "blogTitle": "Back to the Outback",
+    "blogText": "PG",
+    "date": "2021"
+   }
+]
