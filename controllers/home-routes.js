@@ -1,24 +1,16 @@
 const router = require("express").Router();
-//change to const { Blog, Comment, User } = require("../models");
-const { Movie, Review, User } = require("../models");
+
+const { Blog, Comment, User } = require("../models");
 // Find all available movies from the movie model, and display them on screen. Each object includes an image and a description.
 router.get("/", async (req, res) => {
   try {
-    // find all movies from table
-    //change to blogData = await Blog.findAll();
-    const movieData = await Movie.findAll();
-    // for each movie object in the array, 'get' the essential information.
-    //change to const blogs = blogData.map((blog) => blog.get({ plain: true}));
-    const movies = movieData.map((movie) => movie.get({ plain: true }));
+    const blogData = await Blog.findAll();
+    // for each blog object in the array, 'get' the essential information.
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
 // render the movieList.handlebars page. Pass in movies array and the logged in parameter of the req.session object.
-// change to res.render("blogList", {
-  // blogs, 
-  // loggedIn: req.session.loggedIn,
-//}) 
-//remove lines 19-22
-    res.render("movieList", {
-      movies,
-      loggedIn: req.session.loggedIn,
+res.render("blogList", {
+  blogs, 
+  loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -35,7 +27,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 // User can view the all of the information on the movie that they selected. If they are logged in, they will be able to leave a review.
-router.get("/movie/:id", async (req, res) => {
+//We need to look at this closely to get all Blogs associated with a User.
+router.get("/movie/:id", async (req, res) => { 
   try {
     // find the movie by it's primary key from the req.params.id
     const movieData = await Movie.findByPk(req.params.id, {
