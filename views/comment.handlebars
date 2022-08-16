@@ -1,0 +1,44 @@
+{{!-- Allows loggedIn user to make a review and users that are not loggedIn to see the reviews --}}
+<div class="container text-center">
+<h1>Reviews</h1>
+{{> navlinks}}
+</div>
+
+
+<div class="container mt-5 mb-3">
+    <div class="d-flex justify-content-center row pb-5">
+        <div class="col-md-8">
+            <div class="d-flex flex-column comment-section ">
+                <div class="bg-white  p-2">
+                    <div class="mt-2">
+                        {{#each blog.comments as |comment|}}
+                         <div class="d-flex flex-row align-items-start"></div>
+                        <p class="comment-text">{{comment.user.name}}: {{comment.content}}</p>
+                        <p class="comment-text">{{comment.date}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="bg-light p-2">
+                    {{#if loggedIn}}
+                    <div class="d-flex flex-row align-items-start">
+                        <textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                    <div class="mt-2 text-right"><button class="btn btn-danger btn-sm shadow-none review-button me-2" type="button">Post Comment</button>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
