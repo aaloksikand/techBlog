@@ -28,25 +28,24 @@ router.get("/login", (req, res) => {
 });
 // User can view the all of the information on the movie that they selected. If they are logged in, they will be able to leave a review.
 //We need to look at this closely to get all Blogs associated with a User.
-router.get("/movie/:id", async (req, res) => { 
+router.get("/blog/:id", async (req, res) => { 
   try {
     // find the movie by it's primary key from the req.params.id
-    const movieData = await Movie.findByPk(req.params.id, {
+    const blogData = await Blog.findByPk(req.params.id, {
       include: {
         // display any previous reviews
-        model: Review,
-        attributes: ["content", "user_id"],
+        model: Comment,
+        attributes: ["content", "user_id", "date"],
         // use this to see which user made each review.
         include: [{ model: User }],
       },
     });
 
-    const movie = movieData.get({ plain: true });
+    const blog = blogData.get({ plain: true });
 
     // pass movie object to view along with currently logged in user photo, and the boolean loggedIn. 
-    res.render("review", {
-      movie: movie,
-      photo: req.session.photo,
+    res.render("comment", {
+      blog: blog,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

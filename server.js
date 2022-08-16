@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 // Set up sessions
 const sess = {
-  secret: process.env.SUPER_SESS_SECRET,
-  cookie: {},
+  secret: process.env.secret,
+  cookie: {maxAge: 3600},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
